@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+<input type="checkbox" id="box" value="./demo.py"/>demo1
+<input type="checkbox" id="box" value="./demo2.py"/>demo2
+<button onclick="javascript:run();">执行</button>
+<script type="text/javascript">
+	function run(){
+	var value="";
+   for (var i=0;i<box.length;i++ ){
+     if(box[i].checked){ //判断复选框是否选中
+    value=value+box[i].value + ";"; //值的拼凑 .. 具体处理看你的需要,
+  }
+   }
+   
+	url = "http://192.168.1.100:5000/run?filename="+value;
+	//alert(url);
+	$.ajax({url:url,async:false});
+}
+</script>
+</body>
+</html>

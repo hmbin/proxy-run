@@ -1,0 +1,10 @@
+bin/
+lib/
+lib64
+pip-selfcheck.json
+include/
+local/
+*.pyc
+config.json
+orion/orion.log
+Scripts/
